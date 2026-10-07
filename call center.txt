@@ -1,0 +1,147 @@
+call center simulation:
+
+from collections import deque
+
+# Create an empty queue
+call_queue = deque()
+
+while True:
+    print("\n--- Call Center Queue ---")
+    print("1. Add a customer call")
+    print("2. Answer and remove the first call")
+    print("3. View all waiting calls")
+    print("4. Check if queue is empty")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        customer = input("Enter customer name: ")
+        call_queue.append(customer)
+        print(f"Call from {customer} added to the queue.")
+
+    elif choice == "2":
+        if len(call_queue) == 0:
+            print("No calls waiting to be answered.")
+        else:
+            customer = call_queue.popleft()
+            print(f"Answering call from {customer}.")
+
+    elif choice == "3":
+        if len(call_queue) == 0:
+            print("No calls are currently waiting.")
+        else:
+            print("Calls currently waiting:")
+            for i, customer in enumerate(call_queue, start=1):
+                print(f"{i}. {customer}")
+
+    elif choice == "4":
+        if len(call_queue) == 0:
+            print("The queue is empty.")
+        else:
+            print("The queue is not empty.")
+
+    elif choice == "5":
+        print("Exiting Call Center Queue.")
+        break
+
+    else:
+        print("Invalid choice. Please try again.")
+
+
+output:
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 1
+Enter customer name: Rahul
+Call from Rahul added to the queue.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 1
+Enter customer name: Priya
+Call from Priya added to the queue.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 3
+Calls currently waiting:
+1. Rahul
+2. Priya
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 4
+The queue is not empty.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 2
+Answering call from Rahul.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 3
+Calls currently waiting:
+1. Priya
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 2
+Answering call from Priya.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 2
+No calls waiting to be answered.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 4
+The queue is empty.
+
+--- Call Center Queue ---
+1. Add a customer call
+2. Answer and remove the first call
+3. View all waiting calls
+4. Check if queue is empty
+5. Exit
+Enter your choice: 5
+Exiting Call Center Queue.
+
